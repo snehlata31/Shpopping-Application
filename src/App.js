@@ -1,13 +1,13 @@
-import data from './data';
-import './Style.css';
-
+import ProductScreen from './Screens/ProductScreen';
+import HomeScreen from './Screens/HomeScreen';
+import { BrowserRouter, Route } from "react-router-dom";
 const App = () => {
   return (
-    <div className="App">
-      <div class="grid-container">
-        <header class="row">
+    <BrowserRouter>
+      <div className="grid-container">
+        <header className="row">
           <div>
-            <a href class="brand">amazona</a>
+            <a className="brand">amazona</a>
           </div>
           <div>
             <a href="cart.html">Cart</a>
@@ -15,33 +15,13 @@ const App = () => {
           </div>
         </header>
         <main>
-          <div class="row center">
-            {data.products.map((product) => (
-              <div class="card">
-                <a href="product.html">
-                  <img src={product.image} class="medium" alt={product.name} />
-                </a>
-                <div class="card-body">
-                  <a href="product.html">
-                    <h2>{product.name}</h2></a>
-                  <div class="rating">
-                    <span> <i class="fa fa-star"></i> </span>
-                    <span> <i class="fa fa-star"></i> </span>
-                    <span> <i class="fa fa-star"></i> </span>
-                    <span> <i class="fa fa-star"></i> </span>
-                    <span> <i class="fa fa-star"></i> </span>
-                  </div>
-                  <div class="price">120$</div>
-                </div>
-              </div>
-            ))
-            }
-          </div>
+          <Route path="/product/:id" component={ProductScreen}></Route>
+          <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        <footer class="row center">All Right preserved</footer>
+        <footer className="row center">All Right preserved</footer>
       </div>
+    </BrowserRouter >
 
-    </div >
   );
 }
 
