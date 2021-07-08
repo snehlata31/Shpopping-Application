@@ -3,6 +3,7 @@ import Rating from './Rating ';
 const Product = (props) => {
     console.log(props);
     const { product } = props;
+    console.log("numrevies", product.numReviews);
     return (
         <div>
             <div key={product._id} className="card">
@@ -21,5 +22,4 @@ const Product = (props) => {
         </div>
     );
 }
-
 export default Product;
