@@ -8,12 +8,14 @@ const HomeScreen = (props) => {
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.productList);
     const { loading, error, products } = productList;
+    console.log("productList", productList);
     useEffect(() => {
         dispatch(listProducts());
     }, [dispatch]);
-    console.log(products)
+    console.log("products", products);
     return (
         <div>
+            {console.log("homscreen render")}
             {loading ? (<LoadingBox ></LoadingBox>) : error ? (<MessageBox variant="danger">{error}</MessageBox>)
                 : (<div className="row center">
                     {products.map((product) => (
