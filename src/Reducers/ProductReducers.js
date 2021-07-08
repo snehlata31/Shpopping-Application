@@ -1,10 +1,11 @@
 import {
     PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS, PRODUCT_LIST_FAIL,
-    PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS,
+    PRODUCT_DETAILS_REQUEST,
+    PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL,
-
 } from "../Constants/ProductConstants";
 export const ProductListReducers = (state = { loading: true, products: [] }, action) => {
+    console.log("i amin reducers")
     switch (action.type) {
         case PRODUCT_LIST_REQUEST:
             return { loading: true };
@@ -16,22 +17,10 @@ export const ProductListReducers = (state = { loading: true, products: [] }, act
             return state;
     }
 }
-// export const ProductDetailsReducers = (state = { product: {}, loading: true },
-//     action) => {
-//     switch (action.type) {
-//         case PRODUCT_DETAILS_REQUEST:
-//             return { loading: true };
-//         case PRODUCT_DETAILS_SUCCESS:
-//             console.log("product in reducers");
-//             return { loading: false, product: action.payload };
-//         case PRODUCT_DETAILS_FAIL:
-//             return { loading: false, error: action.payload };
-//         default:
-//             return state;
-//     }
-
-// }
-export const productDetailsReducers = (state = { loading: true }, action) => {
+export const productDetailsReducer = (
+    state = { product: {}, loading: true },
+    action
+) => {
     switch (action.type) {
         case PRODUCT_DETAILS_REQUEST:
             return { loading: true };
@@ -42,4 +31,5 @@ export const productDetailsReducers = (state = { loading: true }, action) => {
         default:
             return state;
     }
+
 };
