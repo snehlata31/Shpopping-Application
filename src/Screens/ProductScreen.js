@@ -6,7 +6,6 @@ import MessageBox from '../components/MessageBox';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-
 import { detailsProduct } from '../Actions/ProductActions';
 const ProductScreen = (props) => {
     const dispatch = useDispatch();
@@ -103,7 +102,6 @@ const ProductScreen = (props) => {
                         </div>
                     </div>
                 </div>
-
             )
             }
         </div >

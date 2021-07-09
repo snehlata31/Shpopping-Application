@@ -19,11 +19,8 @@ const App = () => {
           </div>
           <div>
             <a href="cart.html">Cart
-              {
-                cartItems.length > 0 && (
-
-                  <span className="badge">{cartItems.length}</span>
-                )
+              {cartItems.length > 0 && (
+                <span className="badge">{cartItems.length}</span>)
               }
             </a>
             <a href="sighin.html">Sigh In</a>
